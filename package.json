@@ -1,0 +1,30 @@
+{
+	"name": "qqmusic",
+	"version": "1.0.0",
+	"description": "音乐项目\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[\u001b[\u001b[C\u001b[C\u001b[\u001b[2~音乐项目",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Unique Ning",
+	"license": "MIT",
+	"devDependencies": {
+		"autoprefixer": "^9.3.1",
+		"cssnano": "^4.1.7",
+		"gulp": "^3.9.1",
+		"gulp-concat": "^2.6.1",
+		"gulp-connect": "^5.6.1",
+		"gulp-htmlclean": "^2.7.22",
+		"gulp-imagemin": "^4.1.0",
+		"gulp-less": "^4.0.1",
+		"gulp-postcss": "^8.0.0",
+		"gulp-strip-debug": "^3.0.0",
+		"gulp-uglify": "^3.0.1"
+	},
+	"dependencies": {},
+	"keywords": [
+		"h5",
+		"mobile",
+		"qqmusic"
+	]
+}

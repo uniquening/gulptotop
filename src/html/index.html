@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>返回顶部</title>
+	<link rel="stylesheet" href="../css/font-awesome.min.css">
+	<style>
+		.topdiv {
+			height: 200;
+		}
+		.qfl-totop {
+			position: fixed;
+			width: 46px;
+			text-align: center;
+			bottom: 66px;
+			right: 8px;
+		}
+		.qfl-totop .btn-menu {
+			height: 44px;
+			width: 100%;
+			background-color: #ccc;
+			border-radius: 2px;
+			cursor: pointer;
+			-webkit-box-pack: center;
+			box-pack: center;
+			line-height: 44px;
+			transition: background .3s ease-in-out;
+    -webkit-transition: background .3s ease-in-out;
+    		display: inline-block;
+    		text-decoration: none;
+    		font-size: 28px;
+    		color: #fff;
+    		position: relative;
+    		top: 15px;
+    		margin-bottom: 2px;
+		}
+		.qfl-totop .btn-menu:hover {
+			background-color: #f44444;
+		}
+		.qfl-totop .bottom-qrcode {
+		    top: auto;
+		    bottom: 0;
+		    height: 158px;
+		    width: 128px;
+		    padding: 10px;
+		    margin: 0;
+		    right: 65px;
+		    left: auto;
+		    text-align: center;
+		    position: fixed;
+		    border: 1px solid rgba(0,0,0,0.3);
+		    border-radius: 6px;
+		    display: none;
+		}
+		.qfl-totop .bottom-qrcode h4 {
+			font-size: 0.875rem;
+			margin: 0.5rem 0;
+		}
+		.qfl-totop .bottom-qrcode img {
+			width: 100%;
+		}
+	</style>
+
+</head>
+<body>
+
+	<div class="topdiv">
+
+		<p id="ele">元素</p>
+	</div>
+	<div class="qfl-totop">
+		<div class="btn">
+			<a href="#" class="btn-menu btn-bottom" title="直达底部"><i class="fa fa-angle-down" style="font-size:28px"></i></a>
+			<a href="#" class="btn-menu btn-menu" title="联系我们"><i class="fa fa-commenting-o" style="font-size:24px"></i></a>	
+			<a href="#" class="btn-menu btn-wechat" title="联系我们"><i class="fa fa-wechat" style="font-size:24px;"></i></a>				
+			<a href="#" class="btn-menu btn-top" title="返回顶部"><i class="fa fa-angle-up" style="font-size:28px"></i></a>
+		</div>
+		<div class="bottom-qrcode">
+			<h4>微信联系</h4>
+			<div class="panel-body">
+				<img src="../images/qrcode.jpg" alt="微信二维码">
+			</div>
+			
+		</div>
+
+	</div>
+
+	<script src="../js/jquery-1.12.4.js"></script>
+	<script>
+		window.$ = window.jQuery;
+		var qfltop = $('.qfl-totop');
+		var ele = $('#ele');
+		var body = $('body');
+		var topDiv = $('.topdiv');
+		jQuery(document).ready(function ($) {
+			$('.btn-top').click(function(e) {
+				$('html').scrollTop(0);
+				e.preventDefault();
+			});
+			$('.btn-bottom').click(function(e) {
+				var h = $(document).height() - $(window).innerHeight()
+				$('html').scrollTop(h);
+				e.preventDefault();
+			});
+			$('.btn-wechat').click(function () {
+				var qrcode = $('.bottom-qrcode');
+				if (qrcode.css('display') == 'none') {
+					qrcode.css('display', 'block');
+				} else if (qrcode.css('display') == 'block') {
+					qrcode.css('display', 'none');
+				}
+				
+			});
+			$('.btn-wechat').mouseenter(function () {
+				$('.btn-wechat .fa-wechat').css('color', '#45D321');
+			}).mouseleave(function () {
+				$('.btn-wechat .fa-wechat').css('color', '#fff');
+			})
+		})
+	</script>
+</body>
+</html>
+
